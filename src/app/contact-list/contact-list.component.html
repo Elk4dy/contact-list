@@ -1,0 +1,44 @@
+<div class="container-fluid  contacts-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="recent-contacts">
+                <button routerLink="/add-contact">add new contacts <span>+</span></button>
+                <p>latest contacts</p>
+                <ul>
+                    <li *ngFor="let item of recentContacts">
+                        <div class="recent-contact-image-wrapper">
+                            <img [src]="item.image" (error)="$event.target.src = 'assets/img/none.png'"
+                                [alt]="item.firstName">
+                        </div>
+
+                        <div class="recent-contact-info-wrapper">
+                            <span>{{item.firstName + '&nbsp;'}}</span>
+                            <span *ngIf="item.lastName">{{item.lastName }}</span>
+                            <span class="email-info" *ngIf="item.email">{{ item.email }}</span>
+                            <span class="phone-info" *ngIf="!item.email">{{ item.mobileNumber }}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <alphabet-filter [noSmoothScroll]="true" propAlphaOrder="name" propsSearch="name"
+                placeholder="Search Contacts" [data]="contacts" listClass="search-list"
+                [withTemplate]="true" height="550px">
+
+                <ng-template let-item>
+                    <div class="search-list-item">
+                        <div class="contact-image-wrapper">
+                            <img [src]="item.image" (error)="$event.target.src = 'assets/img/none.png'"
+                                [alt]="item.name">
+                        </div>
+                        <div class="contact-info-wrapper">
+                            <span>{{item.name + '&nbsp;'}}</span>
+                            <span *ngIf="item.lastName">{{item.lastName }}</span>
+                            <span class="email-info" *ngIf="item.email">{{ item.email }}</span>
+                        </div>
+                    </div>
+                </ng-template>
+
+            </alphabet-filter>
+        </div>
+    </div>
+</div>

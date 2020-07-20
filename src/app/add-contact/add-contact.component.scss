@@ -1,0 +1,124 @@
+.add-contact {
+  p {
+    color: #9d9c9c;
+    font-size: 40px;
+    text-transform: capitalize;
+    padding: 20px 0;
+    border-bottom: 3px solid #a5ead7;
+  }
+
+  form {
+    .file-field {
+      text-align: center;
+      margin-top: 30px;
+
+      img {
+        width: 120px;
+      }
+
+      label {
+        text-transform: capitalize;
+        font-size: 22px;
+        color: #a4a4a4;
+        cursor: pointer;
+      }
+
+      #file {
+        display: none;
+      }
+
+    }
+
+    .form-group {
+      .form-control {
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+
+      input {
+        display: block;
+        border: 0;
+        width: 100%;
+        font-size: 20px;
+        padding: 10px 0;
+        border-bottom: 3px solid #a5ead7;
+        position: relative;
+        margin: 15px 0;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+
+    }
+
+    .phone-field {
+      .mobile-field {
+        display: inline-block;
+        width: 79%;
+      }
+
+      input {
+        width: 100%;
+        margin: 0;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .country-code-field {
+        width: 20%;
+        margin-right: 1%;
+        display: inline-block;
+
+        select {
+          width: 100%;
+          border: 0;
+          font-size: 20px;
+          padding: 10px 0;
+          border-bottom: 3px solid #a5ead7;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      border: 0;
+      border-radius: 10px;
+      color: #ffff;
+      font-size: 25px;
+      text-transform: capitalize;
+      padding: 12px 0;
+      background-color: #425ddc;
+      width: 35%;
+
+      &:focus {
+        outline: none;
+      }
+
+      &[type=submit] {
+        background-color: #37bb8a;
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      &:disabled {
+        color: #b8b6b6;
+        cursor: not-allowed;
+      }
+    }
+
+    // button[type=submit] {
+    //   background-color: #37bb8a;
+    // }
+  }
+}
